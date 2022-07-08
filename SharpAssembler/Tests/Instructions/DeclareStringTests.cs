@@ -23,23 +23,24 @@
  */
 #endregion
 using SharpAssembler.Instructions;
-using NUnit.Framework;
+
 using System;
 using System.Linq;
 using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Core.Tests.Instructions
 {
 	/// <summary>
 	/// Tests the <see cref="DeclareString"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class DeclareStringTests : InstructionTestsBase
 	{
 		/// <summary>
 		/// Tests whether the <see cref="DeclareString"/> instruction emits the result of the expression.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void EmitsData()
 		{
 			var str = "Hèlló wòrld!";

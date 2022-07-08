@@ -22,7 +22,8 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using NUnit.Framework;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SharpAssembler;
 using SharpAssembler.Formats.Bin;
 
@@ -31,13 +32,13 @@ namespace SharpAssembler.Architectures.X86.Tests
 	/// <summary>
 	/// Tests the <see cref="Architecture"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class ArchitectureTests
 	{
 		/// <summary>
 		/// Tests the <see cref="Architecture.Architecture()"/> constructor.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void ConstructorTest()
 		{
 			var arch = new X86Architecture();
@@ -51,7 +52,7 @@ namespace SharpAssembler.Architectures.X86.Tests
 		/// <summary>
 		/// Tests the <see cref="Architecture.Architecture(CpuType)"/> constructor.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void ConstructorTest_CpuType()
 		{
 			var type = CpuType.AmdBulldozer;
@@ -67,7 +68,7 @@ namespace SharpAssembler.Architectures.X86.Tests
 		/// <summary>
 		/// Tests the <see cref="Architecture.Architecture(CpuFeatures)"/> constructor.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void ConstructorTest_CpuFeatures()
 		{
 			var features = CpuFeatures.PclMulQdq | CpuFeatures.Privileged;
@@ -83,7 +84,7 @@ namespace SharpAssembler.Architectures.X86.Tests
 		/// <summary>
 		/// Tests the <see cref="Architecture.Architecture(CpuType, DataSize)"/> constructor.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void ConstructorTest_CpuType_DataSize()
 		{
 			var type = CpuType.AmdBulldozer;
@@ -100,7 +101,7 @@ namespace SharpAssembler.Architectures.X86.Tests
 		/// <summary>
 		/// Tests the <see cref="Architecture.Architecture(CpuFeatures, DataSize)"/> constructor.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void ConstructorTest_CpuFeatures_DataSize()
 		{
 			var size = DataSize.Bit64;
@@ -117,7 +118,7 @@ namespace SharpAssembler.Architectures.X86.Tests
 		/// <summary>
 		/// Tests the <see cref="Architecture.Architecture(CpuType, CpuFeatures, DataSize)"/> constructor.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void ConstructorTest_CpuType_CpuFeatures_DataSize()
 		{
 			var type = CpuType.IntelPenryn;
@@ -135,7 +136,7 @@ namespace SharpAssembler.Architectures.X86.Tests
 		/// <summary>
 		/// Tests the <see cref="Architecture.Name"/> property.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void NameTest()
 		{
 			X86Architecture arch;
@@ -150,7 +151,7 @@ namespace SharpAssembler.Architectures.X86.Tests
 		/// <summary>
 		/// Tests the <see cref="Architecture.CreateContext"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void CreateContextTest()
 		{
 			BinObjectFileFormat format = new BinObjectFileFormat();
@@ -158,14 +159,14 @@ namespace SharpAssembler.Architectures.X86.Tests
 			BinObjectFile objectFile = (BinObjectFile)format.CreateObjectFile(arch, "test");
 			var context = arch.CreateContext(objectFile);
 			Assert.IsNotNull(context);
-			Assert.IsInstanceOf<Context>(context);
+			Assert.IsInstanceOfType(context,typeof(Context));
 			Assert.AreEqual(objectFile, context.Representation);
 		}
 
 		/// <summary>
 		/// Tests the <see cref="Architecture.IsValidAddressSize"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void IsValidAddressSizeTest()
 		{
 			Assert.IsTrue(X86Architecture.IsValidAddressSize(CpuType.AmdBulldozer, DataSize.Bit64));

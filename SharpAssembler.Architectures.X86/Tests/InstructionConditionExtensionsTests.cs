@@ -22,20 +22,22 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using NUnit.Framework;
+
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Architectures.X86.Tests
 {
 	/// <summary>
 	/// Tests the <see cref="InstructionConditionExtensions"/> type.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class InstructionConditionExtensionsTests
 	{
 		/// <summary>
 		/// Tests the <see cref="InstructionConditionExtensions.GetConditionCode"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void GetConditionCodeTest()
 		{
 			var code = InstructionConditionExtensions.GetConditionCode(InstructionCondition.NotGreaterOrEqual);

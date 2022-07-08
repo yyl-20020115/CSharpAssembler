@@ -22,7 +22,8 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using NUnit.Framework;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SharpAssembler;
 
 namespace SharpAssembler.Architectures.X86.Tests
@@ -30,13 +31,13 @@ namespace SharpAssembler.Architectures.X86.Tests
 	/// <summary>
 	/// Tests the <see cref="RegisterExtensions"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class RegisterExtensionsTests
 	{
 		/// <summary>
 		/// Tests the <see cref="RegisterExtensions.GetRegisterType"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void GetRegisterTypeTest()
 		{
 			Assert.AreEqual(RegisterType.Simd64Bit, RegisterExtensions.GetRegisterType(Register.MM2));
@@ -45,7 +46,7 @@ namespace SharpAssembler.Architectures.X86.Tests
 		/// <summary>
 		/// Tests the <see cref="RegisterExtensions.GetValue"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void GetValueTest()
 		{
 			Assert.AreEqual(2, RegisterExtensions.GetValue(Register.MM2));
@@ -54,7 +55,7 @@ namespace SharpAssembler.Architectures.X86.Tests
 		/// <summary>
 		/// Tests the <see cref="RegisterExtensions.GetSize"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void GetSizeTest()
 		{
 			Assert.AreEqual(DataSize.Bit64, RegisterExtensions.GetSize(Register.MM2));

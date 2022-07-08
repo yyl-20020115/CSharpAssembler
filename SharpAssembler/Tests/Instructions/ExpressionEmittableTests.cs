@@ -23,21 +23,22 @@
  */
 #endregion
 using System.IO;
-using NUnit.Framework;
+
 using SharpAssembler.Instructions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Core.Tests.Instructions
 {
 	/// <summary>
 	/// Tests the <see cref="ExpressionEmittable"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class ExpressionEmittableTests : InstructionTestsBase
 	{
 		/// <summary>
 		/// Tests the <see cref="ExpressionEmittable"/> general behavior.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void ExpressionEmittableTest()
 		{
 			var expression = new SimpleExpression(0xFEDCBA98);

@@ -22,21 +22,22 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using NUnit.Framework;
+
 
 namespace SharpAssembler.Architectures.X86.Tests
 {
 	/// <summary>
 	/// Tests the <see cref="EncodedInstruction.SubStructure"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class EncodedInstruction_SubStructureTests
 	{
 		/// <summary>
 		/// Tests the <see cref="EncodedInstruction.SubStructure.CopyTo"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void CopyToTest()
 		{
 			var classMock = new Mock<EncodedInstruction.SubStructure>();
@@ -79,7 +80,7 @@ namespace SharpAssembler.Architectures.X86.Tests
 		/// <summary>
 		/// Tests the <see cref="EncodedInstruction.SubStructure.ToString"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void ToStringTest()
 		{
 			var classMock = new Mock<EncodedInstruction.SubStructure>();

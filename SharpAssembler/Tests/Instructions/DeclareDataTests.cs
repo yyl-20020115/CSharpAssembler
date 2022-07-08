@@ -23,22 +23,23 @@
  */
 #endregion
 using SharpAssembler.Instructions;
-using NUnit.Framework;
+
 using System.Linq;
 using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Core.Tests.Instructions
 {
 	/// <summary>
 	/// Tests the <see cref="DeclareData"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class DeclareDataTests : InstructionTestsBase
 	{
 		/// <summary>
 		/// Tests whether the <see cref="DeclareData"/> instruction emits the result of the expression.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void EmitsData()
 		{
 			Func<Context, SimpleExpression> expression = (context) => new SimpleExpression(context.Address);

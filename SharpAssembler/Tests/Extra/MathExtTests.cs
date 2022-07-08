@@ -23,20 +23,21 @@
  */
 #endregion
 using System;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 
 namespace SharpAssembler.Core.Tests.Extra
 {
 	/// <summary>
 	/// Tests the <see cref="MathExt"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class MathExtTests
 	{
 		/// <summary>
 		/// Tests the <see cref="MathExt.IsPowerOfTwo"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void IsPowerOfTwo()
 		{
 			Assert.IsFalse(MathExt.IsPowerOfTwo(-9));
@@ -72,7 +73,7 @@ namespace SharpAssembler.Core.Tests.Extra
 		/// <summary>
 		/// Tests the <see cref="MathExt.CalculatePadding"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void CalculatePadding()
 		{
 			Assert.AreEqual(0, MathExt.CalculatePadding(0, 1024));
@@ -88,7 +89,7 @@ namespace SharpAssembler.Core.Tests.Extra
 		/// <summary>
 		/// Tests the <see cref="MathExt.Align"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Align()
 		{
 			Assert.AreEqual(0, MathExt.Align(0, 1024));
@@ -141,23 +142,23 @@ namespace SharpAssembler.Core.Tests.Extra
 		/// <summary>
 		/// Tests the <see cref="MathExt.GetSizeOfValue"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void GetSizeOfValue()
 		{
 			foreach (var value in UnsignedValues)
 			{
 				if (value.Item2 >= 0x00 && value.Item2 <= 0xFF)
 				{
-					Assert.That(MathExt.GetSizeOfValue((byte)value.Item2), Is.EqualTo(value.Item1));
-					Assert.That(MathExt.GetSizeOfValue((byte)value.Item2, false), Is.EqualTo(value.Item1));
+					Assert.AreEqual(MathExt.GetSizeOfValue((byte)value.Item2), (value.Item1));
+					Assert.AreEqual(MathExt.GetSizeOfValue((byte)value.Item2, false), (value.Item1));
 				}
 			}
 			foreach (var value in SignedValues)
 			{
 				if (value.Item2 >= -0x80 && value.Item2 <= 0x7F)
 				{
-					Assert.That(MathExt.GetSizeOfValue((sbyte)value.Item2), Is.EqualTo(value.Item1));
-					Assert.That(MathExt.GetSizeOfValue((sbyte)value.Item2, true), Is.EqualTo(value.Item1));
+					Assert.AreEqual(MathExt.GetSizeOfValue((sbyte)value.Item2), (value.Item1));
+					Assert.AreEqual(MathExt.GetSizeOfValue((sbyte)value.Item2, true), (value.Item1));
 				}
 			}
 
@@ -165,16 +166,16 @@ namespace SharpAssembler.Core.Tests.Extra
 			{
 				if (value.Item2 >= 0x0000 && value.Item2 <= 0xFFFF)
 				{
-					Assert.That(MathExt.GetSizeOfValue((ushort)value.Item2), Is.EqualTo(value.Item1));
-					Assert.That(MathExt.GetSizeOfValue((ushort)value.Item2, false), Is.EqualTo(value.Item1));
+					Assert.AreEqual(MathExt.GetSizeOfValue((ushort)value.Item2), (value.Item1));
+					Assert.AreEqual(MathExt.GetSizeOfValue((ushort)value.Item2, false), (value.Item1));
 				}
 			}
 			foreach (var value in SignedValues)
 			{
 				if (value.Item2 >= -0x8000 && value.Item2 <= 0x7FFF)
 				{
-					Assert.That(MathExt.GetSizeOfValue((short)value.Item2), Is.EqualTo(value.Item1));
-					Assert.That(MathExt.GetSizeOfValue((short)value.Item2, true), Is.EqualTo(value.Item1));
+					Assert.AreEqual(MathExt.GetSizeOfValue((short)value.Item2), (value.Item1));
+					Assert.AreEqual(MathExt.GetSizeOfValue((short)value.Item2, true), (value.Item1));
 				}
 			}
 
@@ -182,28 +183,28 @@ namespace SharpAssembler.Core.Tests.Extra
 			{
 				if (value.Item2 >= 0x00000000 && value.Item2 <= 0xFFFFFFFF)
 				{
-					Assert.That(MathExt.GetSizeOfValue((uint)value.Item2), Is.EqualTo(value.Item1));
-					Assert.That(MathExt.GetSizeOfValue((uint)value.Item2, false), Is.EqualTo(value.Item1));
+					Assert.AreEqual(MathExt.GetSizeOfValue((uint)value.Item2), (value.Item1));
+					Assert.AreEqual(MathExt.GetSizeOfValue((uint)value.Item2, false), (value.Item1));
 				}
 			}
 			foreach (var value in SignedValues)
 			{
 				if (value.Item2 >= -0x80000000 && value.Item2 <= 0x7FFFFFFF)
 				{
-					Assert.That(MathExt.GetSizeOfValue((int)value.Item2), Is.EqualTo(value.Item1));
-					Assert.That(MathExt.GetSizeOfValue((int)value.Item2, true), Is.EqualTo(value.Item1));
+					Assert.AreEqual(MathExt.GetSizeOfValue((int)value.Item2), (value.Item1));
+					Assert.AreEqual(MathExt.GetSizeOfValue((int)value.Item2, true), (value.Item1));
 				}
 			}
 
 			foreach (var value in UnsignedValues)
 			{
-				Assert.That(MathExt.GetSizeOfValue((ulong)value.Item2), Is.EqualTo(value.Item1));
-				Assert.That(MathExt.GetSizeOfValue((ulong)value.Item2, false), Is.EqualTo(value.Item1));
+				Assert.AreEqual(MathExt.GetSizeOfValue((ulong)value.Item2), (value.Item1));
+				Assert.AreEqual(MathExt.GetSizeOfValue((ulong)value.Item2, false), (value.Item1));
 			}
 			foreach (var value in SignedValues)
 			{
-				Assert.That(MathExt.GetSizeOfValue((long)value.Item2), Is.EqualTo(value.Item1));
-				Assert.That(MathExt.GetSizeOfValue((long)value.Item2, true), Is.EqualTo(value.Item1));
+				Assert.AreEqual(MathExt.GetSizeOfValue((long)value.Item2), (value.Item1));
+				Assert.AreEqual(MathExt.GetSizeOfValue((long)value.Item2, true), (value.Item1));
 			}
 		}
 	}

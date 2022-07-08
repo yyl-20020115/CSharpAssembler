@@ -22,14 +22,16 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using NUnit.Framework;
+
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Core.Tests
 {
 	/// <summary>
 	/// Tests the <see cref="Constructable"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class ConstructableTests
 	{
 		

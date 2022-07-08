@@ -3,3 +3,24 @@
 ################################################################################
 
 /SharpAssembler.Languages.Nasm/Tests/bin/Debug
+/SharpAssembler.Languages.Nasm/Tests/obj/Debug
+/SharpAssembler.Languages.Nasm/Source/bin/Debug
+/SharpAssembler.Languages.Nasm/Source/obj/Debug
+/SharpAssembler.Formats.Elf32/Tests/obj/Debug
+/SharpAssembler.Formats.Elf32/Tests/bin/Debug
+/SharpAssembler.Formats.Elf32/Source/obj/Debug
+/SharpAssembler.Formats.Elf32/Source/bin/Debug
+/SharpAssembler.Formats.Bin/Tests/obj/Debug
+/SharpAssembler.Formats.Bin/Tests/bin/Debug
+/SharpAssembler.Formats.Bin/Source/obj/Debug
+/SharpAssembler.Formats.Bin/Source/bin/Debug
+/SharpAssembler.Architectures.X86/Tests/obj/Debug
+/SharpAssembler.Architectures.X86/Tests/bin/Debug
+/SharpAssembler.Architectures.X86/Source/obj/Debug
+/SharpAssembler.Architectures.X86/Source/bin/Debug
+/SharpAssembler/Tests/obj/Debug
+/SharpAssembler/Tests/bin/Debug
+/SharpAssembler/Source/obj/Debug
+/SharpAssembler/Source/bin/Debug
+/.vs/SharpAssembler
+/packages/MSTest.TestFramework.2.2.10

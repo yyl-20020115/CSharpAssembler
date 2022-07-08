@@ -23,22 +23,23 @@
  */
 #endregion
 using System.IO;
-using NUnit.Framework;
+
 using SharpAssembler.Formats.Bin;
 using SharpAssembler;
 using SharpAssembler.Instructions;
 using SharpAssembler.Symbols;
 using SharpAssembler.Architectures.X86.Instructions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Architectures.X86.Tests.Instructions
 {
 	/// <summary>
 	/// Assembles a 'Hello World' program.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class HelloWorld : ExampleBase
 	{
-		[Test]
+		[TestMethod]
 		public void Do()
 		{
 			BinObjectFileFormat format = new BinObjectFileFormat();
@@ -90,7 +91,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 			Assert.AreEqual(expected, result);
 		}
 
-		[Test]
+		[TestMethod]
 		public void Do2()
 		{
 			BinObjectFileFormat format = new BinObjectFileFormat();

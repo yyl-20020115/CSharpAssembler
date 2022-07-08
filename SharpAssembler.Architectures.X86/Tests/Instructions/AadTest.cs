@@ -22,7 +22,8 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using NUnit.Framework;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SharpAssembler.Architectures.X86.Instructions;
 using SharpAssembler.Architectures.X86.Operands;
 
@@ -31,13 +32,13 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 	/// <summary>
 	/// Tests the <see cref="Aad"/> instruction.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class AadTest : InstructionTestBase
 	{
 		/// <summary>
 		/// Tests the <c>aad</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Aad()
 		{
 			var instruction = new Aad();
@@ -52,7 +53,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>aad imm8</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Aad_imm8()
 		{
 			var instruction = new Aad(new Immediate(123));

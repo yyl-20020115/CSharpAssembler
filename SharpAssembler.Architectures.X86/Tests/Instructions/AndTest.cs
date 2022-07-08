@@ -22,7 +22,8 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using NUnit.Framework;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SharpAssembler;
 using SharpAssembler.Architectures.X86.Instructions;
 using SharpAssembler.Architectures.X86.Operands;
@@ -32,13 +33,13 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 	/// <summary>
 	/// Tests the <see cref="And"/> instruction.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class AndTest : InstructionTestBase
 	{
 		/// <summary>
 		/// Tests the <c>and AL, imm8</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void And_AL_imm8()
 		{
 			var instrString = "and AL, 123";

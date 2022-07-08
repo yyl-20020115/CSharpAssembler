@@ -22,7 +22,8 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using NUnit.Framework;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SharpAssembler;
 using SharpAssembler.Architectures.X86.Instructions;
 
@@ -31,13 +32,13 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 	/// <summary>
 	/// Tests the <see cref="Cmps"/> instruction.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class CmpsTest : InstructionTestBase
 	{
 		/// <summary>
 		/// Tests the <c>cmps mem8, mem8</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Cmps_mem8_mem8()
 		{
 			var instruction = new Cmps(DataSize.Bit8);
@@ -53,7 +54,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>cmps mem16, mem16</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Cmps_mem16_mem16()
 		{
 			var instruction = new Cmps(DataSize.Bit16);
@@ -69,7 +70,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>cmps mem32, mem32</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Cmps_mem32_mem32()
 		{
 			var instruction = new Cmps(DataSize.Bit32);
@@ -85,7 +86,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>cmps mem64, mem64</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Cmps_mem64_mem64()
 		{
 			var instruction = new Cmps(DataSize.Bit64);

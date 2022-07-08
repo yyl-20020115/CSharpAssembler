@@ -23,21 +23,22 @@
  */
 #endregion
 using Moq;
-using NUnit.Framework;
+
 using SharpAssembler.Symbols;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Core.Tests.Symbols
 {
 	/// <summary>
 	/// Tests the <see cref="Reference"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class ReferenceTests
 	{
 		/// <summary>
 		/// Tests the <see cref="Reference.Resolve"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void ResolveTest()
 		{
 			var symbol1 = new Symbol(SymbolType.Private, "id1");

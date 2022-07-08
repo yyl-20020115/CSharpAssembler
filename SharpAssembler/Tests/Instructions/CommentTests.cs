@@ -23,21 +23,22 @@
  */
 #endregion
 using SharpAssembler.Instructions;
-using NUnit.Framework;
+
 using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Core.Tests.Instructions
 {
 	/// <summary>
 	/// Tests the <see cref="Comment"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class CommentTests : InstructionTestsBase
 	{
 		/// <summary>
 		/// Tests the general use of the <see cref="Comment"/> 'instruction'.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void CommentTest()
 		{
 			// Test the Text property's getter and setter and the constructor.
@@ -49,7 +50,7 @@ namespace SharpAssembler.Core.Tests.Instructions
 #endif
 
 			// The 'instruction' has no representation.
-			Assert.IsEmpty(instr.Construct(this.Context).ToList());
+			Assert.AreEqual(instr.Construct(this.Context).ToList().Count,0);
 		}
 	}
 }

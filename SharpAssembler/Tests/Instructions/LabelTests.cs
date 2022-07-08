@@ -23,24 +23,25 @@
  */
 #endregion
 using SharpAssembler.Instructions;
-using NUnit.Framework;
+
 using System;
 using System.Text;
 using System.Linq;
 using SharpAssembler.Symbols;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Core.Tests.Instructions
 {
 	/// <summary>
 	/// Tests the <see cref="Label"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class LabelTests : InstructionTestsBase
 	{
 		/// <summary>
 		/// Tests whether the <see cref="Label"/> instruction correctly adds a symbol to the context.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void AddsSymbol()
 		{
 			var instr = new Label("test", SymbolType.Public);
@@ -49,7 +50,7 @@ namespace SharpAssembler.Core.Tests.Instructions
 
 			Context.Address = 5;
 
-			Assert.IsEmpty(instr.Construct(Context).ToList());
+			Assert.AreEqual(instr.Construct(Context).ToList().Count,0);
 			Assert.AreEqual(SymbolType.Public, Context.SymbolTable["test"].SymbolType);
 			Assert.AreEqual((Int128)5, Context.SymbolTable["test"].Value);
 		}

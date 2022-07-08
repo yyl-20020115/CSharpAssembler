@@ -25,20 +25,21 @@
 using System;
 using System.IO;
 using System.Text;
-using NUnit.Framework;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Core.Tests.Extra
 {
 	/// <summary>
 	/// Tests the <see cref="BinaryWriterExtensions"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class BinaryWriterExtensionsTests
 	{
 		/// <summary>
 		/// Tests the <see cref="BinaryWriterExtensions.Align"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Align()
 		{
 			using (MemoryStream stream = new MemoryStream())
@@ -75,7 +76,7 @@ namespace SharpAssembler.Core.Tests.Extra
 		/// <summary>
 		/// Tests the <see cref="BinaryWriterExtensions.WriteEncodedString"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void WriteEncodedString()
 		{
 			using (MemoryStream stream = new MemoryStream())
@@ -111,7 +112,7 @@ namespace SharpAssembler.Core.Tests.Extra
 		/// <summary>
 		/// Tests the <see cref="BinaryWriterExtensions.Write(BinaryWriter, Int128)"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void WriteInt128Test()
 		{
 			// These tests are for little endian.
@@ -135,7 +136,7 @@ namespace SharpAssembler.Core.Tests.Extra
 		/// <summary>
 		/// Tests the <see cref="BinaryWriterExtensions.Write"/> method and overloads.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void WriteDataSizeTest()
 		{
 			// These tests are for little endian.

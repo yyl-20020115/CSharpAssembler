@@ -28,9 +28,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using NUnit.Framework;
+
 using SharpAssembler.Formats.Bin;
 using SharpAssembler;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Architectures.X86.Tests.Instructions
 {
@@ -128,7 +129,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 				throw new ArgumentNullException("instruction");
 			#endregion
 
-			Assert.Throws<AssemblerException>(() => Assemble(instruction, mode));
+			Assert.ThrowsException<AssemblerException>(() => Assemble(instruction, mode));
 		}
 
 		/// <summary>

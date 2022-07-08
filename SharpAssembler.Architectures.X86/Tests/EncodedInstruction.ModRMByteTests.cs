@@ -22,20 +22,22 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using NUnit.Framework;
+
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Architectures.X86.Tests
 {
 	/// <summary>
 	/// Tests the <see cref="EncodedInstruction.ModRMByte"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class EncodedInstruction_ModRMByteTests
 	{
 		/// <summary>
 		/// Tests the <see cref="EncodedInstruction.ModRMByte.ToBytes"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void ToBytesTest()
 		{
 			byte[] bytes;

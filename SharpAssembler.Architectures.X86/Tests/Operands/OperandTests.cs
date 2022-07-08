@@ -22,14 +22,16 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using NUnit.Framework;
+
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Architectures.X86.Tests.Operands
 {
 	/// <summary>
 	/// Tests the <see cref="Operand"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class OperandTests
 	{
 

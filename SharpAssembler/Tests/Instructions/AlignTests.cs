@@ -24,20 +24,21 @@
 #endregion
 using SharpAssembler.Instructions;
 using System.Linq;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 
 namespace SharpAssembler.Core.Tests.Instructions
 {
 	/// <summary>
 	/// Tests the <see cref="Align"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class AlignTests : InstructionTestsBase
 	{
 		/// <summary>
 		/// Tests whether the <see cref="Align"/> instruction emits 0x00 bytes.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void EmitsNullBytes()
 		{
 			var instr = new Align(4);
@@ -59,7 +60,7 @@ namespace SharpAssembler.Core.Tests.Instructions
 		/// <summary>
 		/// Tests whether the <see cref="Align"/> instruction emits the specified bytes.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void EmitsSpecifiedBytes()
 		{
 			var instr = new Align(8, 0xAB);

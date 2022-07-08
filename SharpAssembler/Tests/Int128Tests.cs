@@ -23,14 +23,15 @@
  */
 #endregion
 using System;
-using NUnit.Framework;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Core.Tests
 {
 	/// <summary>
 	/// Tests the <see cref="Int128"/> structure.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class Int128Tests
 	{
 		Int128 valuem5 = -5;
@@ -50,7 +51,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the <see cref="Int128.IsEven"/> property.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void IsEvenTest()
 		{
 			Assert.IsFalse(valuem5.IsEven);
@@ -71,7 +72,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the <see cref="Int128.IsZero"/> property.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void IsZeroTest()
 		{
 			Assert.IsFalse(valuem5.IsZero);
@@ -92,7 +93,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the <see cref="Int128.IsOne"/> property.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void IsOneTest()
 		{
 			Assert.IsFalse(valuem5.IsOne);
@@ -113,7 +114,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the <see cref="Int128.IsPowerOfTwo"/> property.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void IsPowerOfTwoTest()
 		{
 			Assert.IsFalse(valuem5.IsPowerOfTwo);
@@ -134,7 +135,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the <see cref="Int128.Sign"/> property.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void SignTest()
 		{
 			Assert.AreEqual(-1, valuem5.Sign);
@@ -155,7 +156,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the comparison operators.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void ComparisonTest()
 		{
 			var valuem3_2 = valuem3;
@@ -194,7 +195,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the unary arithmetic operators.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void UnaryArithmeticTest()
 		{
 			Assert.AreEqual((Int128)5, +value5);
@@ -219,7 +220,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the binary arithmetic operators.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void BinaryArithmeticTest()
 		{
 			Assert.AreEqual((Int128)8, value5 + value3);
@@ -280,14 +281,14 @@ namespace SharpAssembler.Core.Tests
 
 			Assert.AreEqual((Int128)1, value5 / value3);
 			Assert.AreEqual((Int128)0, value3 / value5);
-			Assert.Catch<DivideByZeroException>(() => { Int128 r = value3 / value0; });
+			Assert.ThrowsException<DivideByZeroException>(() => { Int128 r = value3 / value0; });
 			Assert.AreEqual((Int128)0, value0 / value3);
 			Assert.AreEqual((Int128)0, valuem2 / value3);
 			Assert.AreEqual((Int128)(-1), value3 / valuem2);
 
 			Assert.AreEqual((Int128)2, value5 % value3);
 			Assert.AreEqual((Int128)3, value3 % value5);
-			Assert.Catch<DivideByZeroException>(() => { Int128 r = value3 % value0; });
+			Assert.ThrowsException<DivideByZeroException>(() => { Int128 r = value3 % value0; });
 			Assert.AreEqual((Int128)0, value0 % value3);
 			Assert.AreEqual((Int128)(-2), valuem2 % value3);
 			Assert.AreEqual((Int128)1, value3 % valuem2);
@@ -296,7 +297,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the <see cref="Int128.Abs"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void AbsTest()
 		{
 			Assert.AreEqual((Int128)5, Int128.Abs(value5));
@@ -309,7 +310,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the <see cref="Int128.Max"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void MaxTest()
 		{
 			Assert.AreEqual((Int128)5, Int128.Max(value5, value3));
@@ -324,7 +325,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the <see cref="Int128.Min"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void MinTest()
 		{
 			Assert.AreEqual((Int128)3, Int128.Min(value5, value3));
@@ -339,7 +340,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the <see cref="Int128.GetPadding"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void GetPaddingTest()
 		{
 			Assert.AreEqual((Int128)3, value5.GetPadding(4));
@@ -350,7 +351,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the <see cref="Int128.Align"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void AlignTest()
 		{
 			Assert.AreEqual((Int128)8, value5.Align(4));

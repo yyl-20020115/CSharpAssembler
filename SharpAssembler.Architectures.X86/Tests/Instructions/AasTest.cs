@@ -22,7 +22,8 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using NUnit.Framework;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SharpAssembler.Architectures.X86.Instructions;
 
 namespace SharpAssembler.Architectures.X86.Tests.Instructions
@@ -30,13 +31,13 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 	/// <summary>
 	/// Tests the <see cref="Aas"/> instruction.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class AasTest : InstructionTestBase
 	{
 		/// <summary>
 		/// Tests the <c>aas</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Aas()
 		{
 			var instruction = new Aas();

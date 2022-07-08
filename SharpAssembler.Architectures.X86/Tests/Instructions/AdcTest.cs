@@ -22,7 +22,8 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using NUnit.Framework;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SharpAssembler;
 using SharpAssembler.Architectures.X86.Instructions;
 using SharpAssembler.Architectures.X86.Operands;
@@ -32,13 +33,13 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 	/// <summary>
 	/// Tests the <see cref="Adc"/> instruction.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class AdcTest : InstructionTestBase
 	{
 		/// <summary>
 		/// Tests the <c>adc AL, imm8</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_AL_imm8()
 		{
 			var instruction = new Adc(
@@ -56,7 +57,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc AX, imm16</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_AX_imm16()
 		{
 			var instrString = "adc AX, 12345";
@@ -72,7 +73,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc EAX, imm32</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_EAX_imm32()
 		{
 			var instrString = "adc EAX, 1234567890";
@@ -88,7 +89,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc RAX, imm32</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_RAX_imm32()
 		{
 			var instruction = new Adc(
@@ -104,7 +105,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc reg/mem8, imm8</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_regmem8_imm8()
 		{
 			var instrString = "adc BYTE [1234], 123";
@@ -120,7 +121,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc reg/mem16, imm16</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_regmem16_imm16()
 		{
 			var instrString = "adc WORD [1234], WORD 12345";
@@ -136,7 +137,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc reg/mem32, imm32</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_regmem32_imm32()
 		{
 			var instruction = new Adc(
@@ -154,7 +155,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc reg/mem64, imm32</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_regmem64_imm32()
 		{
 			var instruction = new Adc(
@@ -170,7 +171,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc reg/mem16, imm8</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_regmem16_imm8()
 		{
 			var instrString = "adc WORD [1234], 123";
@@ -186,7 +187,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc reg/mem32, imm8</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_regmem32_imm8()
 		{
 			var instrString = "adc DWORD [1234], 123";
@@ -202,7 +203,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc reg/mem64, imm8</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_regmem64_imm8()
 		{
 			var instrString = "adc QWORD [1234], 123";
@@ -218,7 +219,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc reg/mem8, reg8</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_regmem8_reg8()
 		{
 			var instrString = "adc BYTE [1234], CL";
@@ -234,7 +235,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc reg/mem16, reg16</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_regmem16_reg16()
 		{
 			var instrString = "adc WORD [1234], CX";
@@ -250,7 +251,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc reg/mem32, reg32</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_regmem32_reg32()
 		{
 			var instrString = "adc DWORD [1234], ECX";
@@ -266,7 +267,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc reg/mem64, reg64</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_regmem64_reg64()
 		{
 			var instrString = "adc QWORD [1234], RCX";
@@ -282,7 +283,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc reg8, reg/mem8</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_reg8_regmem8()
 		{
 			var instrString = "adc CL, BYTE [1234]";
@@ -298,7 +299,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc reg16, reg/mem16</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_reg16_regmem16()
 		{
 			var instrString = "adc CX, WORD [1234]";
@@ -314,7 +315,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc reg32, reg/mem32</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_reg32_regmem32()
 		{
 			var instrString = "adc ECX, DWORD [1234]";
@@ -330,7 +331,7 @@ namespace SharpAssembler.Architectures.X86.Tests.Instructions
 		/// <summary>
 		/// Tests the <c>adc reg64, reg/mem64</c> instruction variant.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Adc_reg64_regmem64()
 		{
 			var instruction = new Adc(

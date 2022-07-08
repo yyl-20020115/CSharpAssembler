@@ -23,23 +23,24 @@
  */
 #endregion
 using SharpAssembler.Instructions;
-using NUnit.Framework;
+
 using System;
 using System.Text;
 using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Core.Tests.Instructions
 {
 	/// <summary>
 	/// Tests the <see cref="Define"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class DefineTests : InstructionTestsBase
 	{
 		/// <summary>
 		/// Tests whether the <see cref="Define"/> instruction correctly adds a symbol to the context.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void AddsSymbol()
 		{
 			Func<Context, SimpleExpression> expression = (context) => new SimpleExpression(context.Address + 3);
@@ -51,7 +52,7 @@ namespace SharpAssembler.Core.Tests.Instructions
 
 			Context.Address = 5;
 
-			Assert.IsEmpty(instr.Construct(Context).ToList());
+			Assert.AreEqual(instr.Construct(Context).ToList().Count,0);
 			Assert.AreEqual((Int128)8, Context.SymbolTable["test"].Value);
 		}
 	}

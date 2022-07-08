@@ -26,32 +26,33 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Moq;
-using NUnit.Framework;
+
 using SharpAssembler.Symbols;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Core.Tests.Symbols
 {
 	/// <summary>
 	/// Tests the <see cref="SymbolTable"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class SymbolTableTests
 	{
 		/// <summary>
 		/// Tests that null objects cannot be added to the <see cref="SymbolTable"/>.
 		/// </summary>
-		[Theory]
+		[TestMethod]
 		public void NullObjectsCannotBeAdded()
 		{
 			SymbolTable table = new SymbolTable();
-			Assert.Throws<NullReferenceException>(() => table.Add(null));
+			Assert.ThrowsException<NullReferenceException>(() => table.Add(null));
 		}
 
 		/// <summary>
 		/// Tests that the <see cref="SymbolTable.SymbolTable(IEnumerable{T})"/> constructor
 		/// correctly adds the collection of symbols to the table.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void Constructor_IEnumerable()
 		{
 			var symbols = new Symbol[]{
@@ -67,7 +68,7 @@ namespace SharpAssembler.Core.Tests.Symbols
 		/// <summary>
 		/// Tests that <see cref="SymbolTable.AddRange"/> correctly adds the specified items.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void AddRange()
 		{
 			var symbols = new Symbol[]{

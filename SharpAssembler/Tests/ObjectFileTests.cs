@@ -22,20 +22,21 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using NUnit.Framework;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Core.Tests
 {
 	/// <summary>
 	/// Tests for the <see cref="ObjectFile"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class ObjectFileTests
 	{
 		/// <summary>
 		/// Tests the <see cref="ObjectFile.AddNewSection"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void AddNewSectionTest()
 		{
 			ObjectFile objectfile = new ObjectFileMock();

@@ -22,21 +22,22 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SharpAssembler.Symbols;
-using NUnit.Framework;
+
 
 namespace SharpAssembler.Core.Tests
 {
 	/// <summary>
 	/// Tests the <see cref="Context"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class ContextTests
 	{
 		/// <summary>
 		/// Tests the <see cref="Context.Context"/> constructor.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void ConstructorTest()
 		{
 			var objectFile = new ObjectFileMock();
@@ -50,7 +51,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the <see cref="Context.Section"/> property.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void SectionTest()
 		{
 			var objectFile = new ObjectFileMock();
@@ -65,7 +66,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the <see cref="Context.Address"/> property.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void AddressTest()
 		{
 			var objectFile = new ObjectFileMock();
@@ -78,7 +79,7 @@ namespace SharpAssembler.Core.Tests
 		/// <summary>
 		/// Tests the <see cref="Context.Reset"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void ResetTest()
 		{
 			var objectFile = new ObjectFileMock();

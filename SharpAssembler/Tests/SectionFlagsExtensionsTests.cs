@@ -22,20 +22,21 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
-using NUnit.Framework;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Core.Tests
 {
 	/// <summary>
 	/// Tests the <see cref="SectionFlagsExtensions"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class SectionFlagsExtensionsTests
 	{
 		/// <summary>
 		/// Tests the <see cref="SectionFlagsExtensions.SetFlag"/> method.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void SetFlagTest()
 		{
 			var old = SectionFlags.Allocated;

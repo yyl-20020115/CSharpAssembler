@@ -23,29 +23,30 @@
  */
 #endregion
 using SharpAssembler.Instructions;
-using NUnit.Framework;
+
 using System;
 using System.Linq;
 using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Core.Tests.Instructions
 {
 	/// <summary>
 	/// Tests the <see cref="Extern"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class ExternTests : InstructionTestsBase
 	{
 		/// <summary>
 		/// Tests whether the <see cref="Extern"/> instruction correctly adds a symbol to the context.
 		/// </summary>
-		[Test]
+		[TestMethod]
 		public void AddsSymbol()
 		{
 			var instr = new Extern("test");
 			Assert.AreEqual("test", instr.ExternSymbol.Identifier);
 
-			Assert.IsEmpty(instr.Construct(Context).ToList());
+			Assert.AreEqual(instr.Construct(Context).ToList().Count,0);
 			Assert.IsTrue(Context.SymbolTable["test"].IsExtern);
 		}
 	}

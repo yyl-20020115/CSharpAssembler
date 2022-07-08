@@ -23,14 +23,16 @@
  */
 #endregion
 using SharpAssembler;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+
 
 namespace SharpAssembler.Core.Tests
 {
 	/// <summary>
 	/// Tests for the <see cref="DataSizeExtensions"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class DataSizeExtensionsTests
 	{
 		/// <summary>
@@ -38,15 +40,15 @@ namespace SharpAssembler.Core.Tests
 		/// </summary>
 		public void GetBitCount_ReturnsExpectedValues()
 		{
-			Assert.That(DataSize.Bit8.GetBitCount(), Is.EqualTo(8));
-			Assert.That(DataSize.Bit16.GetBitCount(), Is.EqualTo(16));
-			Assert.That(DataSize.Bit32.GetBitCount(), Is.EqualTo(32));
-			Assert.That(DataSize.Bit64.GetBitCount(), Is.EqualTo(64));
-			Assert.That(DataSize.Bit80.GetBitCount(), Is.EqualTo(80));
-			Assert.That(DataSize.Bit128.GetBitCount(), Is.EqualTo(128));
-			Assert.That(DataSize.Bit256.GetBitCount(), Is.EqualTo(256));
+			Assert.AreEqual(DataSize.Bit8.GetBitCount(), (8));
+			Assert.AreEqual(DataSize.Bit16.GetBitCount(), (16));
+			Assert.AreEqual(DataSize.Bit32.GetBitCount(), (32));
+			Assert.AreEqual(DataSize.Bit64.GetBitCount(), (64));
+			Assert.AreEqual(DataSize.Bit80.GetBitCount(), (80));
+			Assert.AreEqual(DataSize.Bit128.GetBitCount(), (128));
+			Assert.AreEqual(DataSize.Bit256.GetBitCount(), (256));
 
-			Assert.That(DataSize.None.GetBitCount(), Is.EqualTo(0));
+			Assert.AreEqual(DataSize.None.GetBitCount(), (0));
 		}
 	}
 }

@@ -22,8 +22,9 @@
  * along with SharpAssembler.  If not, see <http://www.gnu.org/licenses/>.
  */
 #endregion
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
-using NUnit.Framework;
+
 
 namespace SharpAssembler.Core.Tests.Instructions
 {
@@ -38,7 +39,7 @@ namespace SharpAssembler.Core.Tests.Instructions
 		/// <summary>
 		/// Setups the text fixture.
 		/// </summary>
-		[TestFixtureSetUp]
+		[TestMethod]
 		public void Setup()
 		{
 			this.objectFile = new ObjectFileMock();

@@ -23,16 +23,17 @@
  */
 #endregion
 using SharpAssembler;
-using NUnit.Framework;
+
 using SharpAssembler.Symbols;
 using SharpAssembler.Instructions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace SharpAssembler.Core.Tests
 {
 	/// <summary>
 	/// Tests for the <see cref="LabelTypeExtensions"/> class.
 	/// </summary>
-	[TestFixture]
+	[TestClass]
 	public class LabelTypeExtensionsTests
 	{
 		/// <summary>
