@@ -199,11 +199,12 @@ namespace SharpAssembler
 		/// </summary>
 		/// <param name="requestedType">The Type of the object that the new ObjRef will reference.</param>
 		/// <returns>n/a</returns>
-		public override System.Runtime.Remoting.ObjRef CreateObjRef(Type requestedType)
-		{
-			throw new NotSupportedException();
-		}
-
+		//public override System.Runtime.Remoting.ObjRef CreateObjRef(Type requestedType)
+		//{
+		//	throw new NotSupportedException();
+		//}
+		
+		
 		/// <summary>
 		/// Waits for the pending asynchronous read to complete.
 		/// </summary>
